@@ -32,19 +32,28 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("idInput").value = '';
     document.getElementById("titleInput").value = '';
     document.getElementById("annualSalaryInput").value = '';
-
-    calculateTotal(annualSalaryInput)
+    let annualSalary = Number(annualSalaryInput)
+    calculateTotal(annualSalary)
 
 
   });
 });
-
+let total=0
 function calculateTotal(salary) {
   console.log("calculateTotal() works!");
-let total
+
+
 total+=salary 
 let footer =document.getElementById("footerTotal")
 footer.textContent = `Total Monthly: $${total}`;
+console.log(`total is ${total} and salary is ${salary}`);
+
+if (total >20000) {
+  console.log("over 200000")
+}
+
+
+
 }
 
 
