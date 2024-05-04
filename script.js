@@ -33,8 +33,19 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("titleInput").value = '';
     document.getElementById("annualSalaryInput").value = '';
 
+    calculateTotal(annualSalaryInput)
+
+
   });
 });
+
+function calculateTotal(salary) {
+  console.log("calculateTotal() works!");
+let total
+total+=salary 
+let footer =document.getElementById("footerTotal")
+footer.textContent = `Total Monthly: $${total}`;
+}
 
 
 
