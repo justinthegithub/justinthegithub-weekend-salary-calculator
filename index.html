@@ -12,14 +12,25 @@
   <main>
 <!- - This application should have a form with five inputs that collect a new employee's first name, last name, ID number, job title, annual salary. -->
 
+<!-- data-testid="firstNameInput"
+    data-testid="lastNameInput"
+    data-testid="idInput"
+    data-testid="titleInput"
+    data-testid="annualSalaryInput" -->
 
+<!--<input
+      id="firstNameInput"
+      placeholder="First Name"
+      type="text"
+      data-testid="firstNameInput"
+     >-->
     
 <form>
-<input id="firstName">
-  <input id="lastName">
-  <input id="idNumber"">
-  <input id="jobTitle">
-  <input id="annualSalary">
+<input id="firstNameInput">
+  <input id="lastNameInput">
+  <input id="idInput">
+  <input id="titleInput">
+  <input id="annualSalaryInput">
   <button id="submit" type="submit">
 </form>
 
@@ -29,6 +40,9 @@
     
     <h2>Add Employee</h2>
     <h2>Employees</h2>
+     <div id="employeeTable"></div>
+
+    
   </main>
   <footer>
     <p>Total Monthly</p>
