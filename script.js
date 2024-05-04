@@ -13,21 +13,18 @@ A new employee row should be added to the table.
 The footer's total monthly cost should be updated.
 The form inputs should be cleared out./ */
 
-let firstNameInput = document.getElementById("firstNameInput");
-let lastNameInput = document.getElementById("lastNameInput");
-let idInput = document.getElementById("idInput");
-let titleInput = document.getElementById("titleInput")
-let annualSalaryInput = document.getElementById("annualSalaryInput");
+    document.getElementsByTagName("form")[0].addEventListener('submit', function(event){
+      event.preventDefault();
 
-let submit = document.getElementById("submit");
+      let firstNameInput = document.getElementById("firstNameInput").value;
+      let lastNameInput = document.getElementById("lastNameInput").value;
+      let idInput = document.getElementById("idInput").value;
+      let titleInput = document.getElementById("titleInput").value;
+      let annualSalaryInput = document.getElementById("annualSalaryInput").value;
 
-let table =document.getElementById(employeeTable)
-table.innerHTML = 
-  <td>${firstNameInput}/td>
-<td>${lastNameInput}</td>
-  <td>${idInput}</td>
-    <td>${titleInput}</td>
-    <td>${annualSalaryInput}</td>
+      let table = document.getElementById("employeeTable");
+      table.innerHTML += `<tr><td>${firstNameInput}</td><td>${lastNameInput}</td><td>${idInput}</td><td>${titleInput}</td><td>${annualSalaryInput}</td></tr>`;
+    });
 
 
 
