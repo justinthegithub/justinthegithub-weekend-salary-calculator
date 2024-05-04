@@ -49,7 +49,14 @@ footer.textContent = `Total Monthly: $${total}`;
 console.log(`total is ${total} and salary is ${salary}`);
 
 if (total >20000) {
-  console.log("over 200000")
+  footer.classList.add("over-budget")
+  console.log("over 20000")
+}
+else{
+  footer.classList.remove("over-budget")
+  console.log("under 20000")
+  
+
 }
 
 
