@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let annualSalaryInput = document.getElementById("annualSalaryInput").value;
 
     let table = document.getElementById("employeeTable");
-    table.innerHTML += `<tr><td>${firstNameInput}</td><td>${lastNameInput}</td><td>${idInput}</td><td>${titleInput}</td><td>${annualSalaryInput}</td><td><button onClick="deleteRow()">Delete</button></td></tr>`;
+    table.innerHTML += `<tr><td>${firstNameInput}</td><td>${lastNameInput}</td><td>${idInput}</td><td>${titleInput}</td><td>${annualSalaryInput}</td><td><button onClick="deleteRow(event)">Delete</button></td></tr>`;
 
 
     document.getElementById("firstNameInput").value = '';
@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-function deleteRow(){
+function deleteRow(event){
   console.log("deleteRow() works");
   // Selector for the thing that was clicked  
-let thisRow = event.target.parentElement;
+let thisRow =event.target.closest('tr');
 
 
 // Use selector to remove the list item (target the parent)
@@ -55,7 +55,7 @@ function calculateTotal(salary) {
   console.log("calculateTotal() works!");
 
 
-total+=salary 
+total+=salary/12 
 let footer =document.getElementById("footerTotal")
 footer.textContent = `Total Monthly: $${total}`;
 console.log(`total is ${total} and salary is ${salary}`);
