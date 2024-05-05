@@ -16,6 +16,10 @@ The form inputs should be cleared out./ */
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('submit').addEventListener('click', function(event){
     event.preventDefault();
+    function deleteRow(){
+      console.log("deleteRow() works");
+    
+    }
 
     let firstNameInput = document.getElementById("firstNameInput").value;
     let lastNameInput = document.getElementById("lastNameInput").value;
@@ -24,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let annualSalaryInput = document.getElementById("annualSalaryInput").value;
 
     let table = document.getElementById("employeeTable");
-    table.innerHTML += `<tr><td>${firstNameInput}</td><td>${lastNameInput}</td><td>${idInput}</td><td>${titleInput}</td><td>${annualSalaryInput}</td></tr>`;
+    table.innerHTML += `<tr><td>${firstNameInput}</td><td>${lastNameInput}</td><td>${idInput}</td><td>${titleInput}</td><td>${annualSalaryInput}</td><td><button onClick="deleteRow()">Delete</button></td></tr>`;
 
 
     document.getElementById("firstNameInput").value = '';
@@ -34,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("annualSalaryInput").value = '';
     let annualSalary = Number(annualSalaryInput)
     calculateTotal(annualSalary)
+    
 
 
   });
@@ -58,7 +63,6 @@ else{
   
 
 }
-
 
 
 }
