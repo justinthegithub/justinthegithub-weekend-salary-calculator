@@ -16,10 +16,7 @@ The form inputs should be cleared out./ */
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('submit').addEventListener('click', function(event){
     event.preventDefault();
-    function deleteRow(){
-      console.log("deleteRow() works");
-    
-    }
+
 
     let firstNameInput = document.getElementById("firstNameInput").value;
     let lastNameInput = document.getElementById("lastNameInput").value;
@@ -43,6 +40,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   });
 });
+
+function deleteRow(){
+  console.log("deleteRow() works");
+  // Selector for the thing that was clicked  
+let thisRow = event.target.parentElement;
+
+
+// Use selector to remove the list item (target the parent)
+thisRow.remove()
+}
 let total=0
 function calculateTotal(salary) {
   console.log("calculateTotal() works!");
